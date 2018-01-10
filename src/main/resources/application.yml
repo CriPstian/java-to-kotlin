@@ -1,0 +1,6 @@
+pets:
+  dogs:
+    defaultBreed: Doggo
+  cats:
+    defaultBreed: Kitty
+
