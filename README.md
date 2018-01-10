@@ -2,24 +2,23 @@
 
 Sample project to start off with my presentation.
 
+## What needs to be covered
+
+
+
 ## Default endpoints
 
-##### Get all pets
-    GET /pets
-Return a List of existing hardcoded pets.
-
+#### GET /pets
 ```bash
-http http://localhost:8080/pets
+$ http http://localhost:8080/pets
 ```
+
+Return a List of all existing hardcoded pets.
+
 
 Example result:
 
-```bash
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Date: Wed, 10 Jan 2018 10:42:49 GMT
-Transfer-Encoding: chunked
-
+```json
 [
     {
         "age": 3, 
