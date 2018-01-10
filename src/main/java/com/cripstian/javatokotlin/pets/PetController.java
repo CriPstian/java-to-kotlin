@@ -1,9 +1,11 @@
 package com.cripstian.javatokotlin.pets;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -33,8 +35,15 @@ public class PetController {
         return petService.findAll();
     }
 
-    @PostMapping
-    public  void addPet(@RequestBody Pet pet) {
+    @PostMapping("/dog")
+    @ResponseStatus(HttpStatus.CREATED)
+    public  void addDog(@RequestBody Dog pet) {
+        petService.addPet(pet);
+    }
+
+    @PostMapping("/cat")
+    @ResponseStatus(HttpStatus.CREATED)
+    public  void addCat(@RequestBody Cat pet) {
         petService.addPet(pet);
     }
 

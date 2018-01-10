@@ -2,6 +2,7 @@ package com.cripstian.javatokotlin.pets;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,12 +19,12 @@ public class PetService {
     public PetService(final PetsConfiguration petsConfiguration) {
         final String dogDefaultBreed = petsConfiguration.getDogs().getDefaultBreed();
         final String catDefaultBreed = petsConfiguration.getCats().getDefaultBreed();
-        pets = Arrays.asList(
+        pets = new ArrayList<>(Arrays.asList(
             new Dog(1L, "Capy", 3, dogDefaultBreed, ORANGE, SMALL),
             new Cat(2L, "Tom", 4, catDefaultBreed, BLACK, MEDIUM, true),
             new Cat(3L, "Archibald", 1, catDefaultBreed, WHITE, SMALL, false),
             new Dog(4L, "Shobby", 2, dogDefaultBreed, GREEN, LARGE)
-        );
+        ));
     }
 
     public List<Pet> findAll() {
