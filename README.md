@@ -11,12 +11,12 @@ Sample project to start off with my presentation.
 * Expression body methods
 * Default closed classes
 * Null safety
-* default parameters and named parameters
-* infix methods
+* Default parameters and named parameters
+* Infix methods
 * Extension functions
 * String templates
 * Compile time constants using `const`
-* lateinit and delegated properties
+* Lateinit and Delegated properties
 * [Operator overloading](https://kotlinlang.org/docs/reference/operator-overloading.html)
 * Arrays
 * Collections
@@ -24,7 +24,6 @@ Sample project to start off with my presentation.
 * [Range expressions](https://kotlinlang.org/docs/reference/ranges.html)
 * [Data classes](https://kotlinlang.org/docs/reference/data-classes.html)
 * [Higher-Order Functions and Lambdas](https://kotlinlang.org/docs/reference/lambdas.html)
-
 
 ## Default endpoints
 
@@ -58,18 +57,15 @@ Example result:
     }
 ]
 ```
-
 ---
 
 #### GET /pets/dogs
 ```bash
 $ http http://localhost:8080/pets/dogs
 ```
-
 Return a List of all existing hardcoded dogs.
 
 Example result:
-
 ```json
 [
     {
@@ -161,10 +157,14 @@ $ # run program
 $ java -jar hello-world.jar
 ```
 
+### Steps
+
+TODO: Add sequence of steps to present
+
+
 ### Why?
 
-    This project is a start project to present the power of Kotlin.
-    We will follow a pettern to be able to give an example for some of Kotlin's new features.
-
+    This project is a start off project to present the power of Kotlin.
+    We will follow a pattern to be able to give an example for some of Kotlin's new features.
 
 [check]: https://github.com/CriPstian/how-to-kotlin/raw/master/checkmark.png "Checked"
