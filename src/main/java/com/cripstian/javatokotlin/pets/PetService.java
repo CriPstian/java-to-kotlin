@@ -17,13 +17,14 @@ public class PetService {
     private final List<Pet> pets;
 
     public PetService(final PetsConfiguration petsConfiguration) {
-        final String dogDefaultBreed = petsConfiguration.getDogs().getDefaultBreed();
-        final String catDefaultBreed = petsConfiguration.getCats().getDefaultBreed();
+        final String dogBreed = petsConfiguration.getDogs().getBreed();
+        final String catBreed = petsConfiguration.getCats().getBreed();
+        long id = 0;
         pets = new ArrayList<>(Arrays.asList(
-            new Dog(1L, "Capy", 3, dogDefaultBreed, ORANGE, SMALL),
-            new Cat(2L, "Tom", 4, catDefaultBreed, BLACK, MEDIUM, true),
-            new Cat(3L, "Archibald", 1, catDefaultBreed, WHITE, SMALL, false),
-            new Dog(4L, "Shobby", 2, dogDefaultBreed, GREEN, LARGE)
+            new Dog(++id, "Capy", 3, dogBreed, ORANGE, SMALL),
+            new Cat(++id, "Tom", 4, catBreed, BLACK, MEDIUM, true),
+            new Cat(++id, "Archibald", 1, catBreed, WHITE, SMALL, false),
+            new Dog(++id, "Shobby", 2, dogBreed, GREEN, LARGE)
         ));
     }
 

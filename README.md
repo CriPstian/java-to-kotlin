@@ -158,9 +158,90 @@ $ java -jar hello-world.jar
 ```
 
 ### Steps
+1. Clone this repository and run `mvn spring-boot:run` in the console to show nice banner
+2. Present current project and show `curl` examples
+3. Add `kotlin` support using IDEA
 
-TODO: Add sequence of steps to present
+    Project Structure -> Modules -> Add Kotlin
 
+    Tools -> Kotlin -> Configure Kotlin in Project
+    
+    this will add the following in the maven pom file
+    
+```xml
+<project>
+    <properties>
+        <!-- ... OTHER PROPERTIES ... -->
+        <kotlin.version>1.2.10</kotlin.version>
+    </properties>
+    <dependencies>
+        <!-- ... OTHER DEPENDECIES ... -->
+        <!-- Target java version 1.8 (other: 1.6, 1.7) -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <!-- Kotlin test framework -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <!-- ... OTHER PLUGINS ... -->
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
 
 ### Why?
 

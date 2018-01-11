@@ -1,6 +1,12 @@
+spring:
+  banner:
+    image:
+      width: 120
+
 pets:
   dogs:
-    defaultBreed: Doggo
+    name: Capy
+    breed: Doggo
   cats:
-    defaultBreed: Kitty
-
+    name: Tom
+    breed: Kitty

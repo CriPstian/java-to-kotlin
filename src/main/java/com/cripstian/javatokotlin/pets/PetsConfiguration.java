@@ -25,26 +25,44 @@ public class PetsConfiguration {
     }
 
     public static class Dog {
-        private String defaultBreed;
+        private String name;
+        private String breed;
 
-        public String getDefaultBreed() {
-            return defaultBreed;
+        public String getBreed() {
+            return breed;
         }
 
-        public void setDefaultBreed(String defaultBreed) {
-            this.defaultBreed = defaultBreed;
+        public void setBreed(String breed) {
+            this.breed = breed;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 
     public static class Cat {
-        private String defaultBreed;
+        private String name;
+        private String breed;
 
-        public String getDefaultBreed() {
-            return defaultBreed;
+        public String getBreed() {
+            return breed;
         }
 
-        public void setDefaultBreed(String defaultBreed) {
-            this.defaultBreed = defaultBreed;
+        public void setBreed(String breed) {
+            this.breed = breed;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 }
