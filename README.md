@@ -158,7 +158,8 @@ $ java -jar hello-world.jar
 ```
 
 ### Steps
-1. Clone this repository and run `mvn spring-boot:run` in the console to show nice banner
+1. Clone this repository from [GitHub](https://github.com/CriPstian/java-to-kotlin.git) and run `mvn spring-boot:run`
+ in the console to show nice banner
 2. Present current project and show `curl` examples
 3. Add `kotlin` support using IDEA
 
@@ -180,6 +181,17 @@ $ java -jar hello-world.jar
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <!-- LATER EDIT: For jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+        </dependency>
+        <!-- LATER EDIT: Make classes default open for spring to do it's job -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-allopen</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
         <!-- Kotlin test framework -->
@@ -216,6 +228,10 @@ $ java -jar hello-world.jar
                 </executions>
                 <configuration>
                     <jvmTarget>1.8</jvmTarget>
+                    <!-- LATER EDIT: To help spring with kotlin -->
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
                 </configuration>
             </plugin>
             <plugin>
@@ -242,6 +258,11 @@ $ java -jar hello-world.jar
     </build>
 </project>
 ```
+4. Create `kotlin` directory and mark as source root. Build project.
+
+5. For kotlin and spring integration we must add the spring-kotlin plugin.
+
+6. For Jackson Kotlin classes support please add `com.fasterxml.jackson.module:jackson-module-kotlin` to the classpath.
 
 ### Why?
 
