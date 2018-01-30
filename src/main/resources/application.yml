@@ -1,7 +1,7 @@
 spring:
   banner:
     image:
-      width: 120
+      width: 80
 
 pets:
   dogs:
