@@ -24,7 +24,8 @@ public class PetService {
             new Dog(++id, "Capy", 3, dogBreed, ORANGE, SMALL),
             new Cat(++id, "Tom", 4, catBreed, BLACK, MEDIUM, true),
             new Cat(++id, "Archibald", 1, catBreed, WHITE, SMALL, false),
-            new Dog(++id, "Shobby", 2, dogBreed, GREEN, LARGE)
+            new Dog(++id, "Shobby", 2, dogBreed, GREEN, LARGE),
+            new KotlinBird(++id, "Tweety", 50)
         ));
     }
 
